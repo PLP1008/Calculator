@@ -4,52 +4,121 @@
 
 body {
   margin: 0;
-  background: linear-gradient(to right, #00AAFF, #00FF6C);
+  /* Professional dark gradient background */
+  background: linear-gradient(90deg, #012824, #8bc4c7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
 }
 
 .calculator-grid {
   display: grid;
   margin-top: 2rem;
   justify-content: center;
-  grid-template-columns: repeat(4, 6rem);
-  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  grid-template-columns: repeat(5, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(6, 6rem);
+  max-width: 95vw;
 }
 
 .calculator-grid > button {
   cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid white;
+  font-size: 1.8rem;
+  border: none;
   outline: none;
-  background-color: rgba(255, 255, 255, .75);
+  background-color: #f1f5f9; /* neutral light gray */
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 .calculator-grid > button:hover,
 .calculator-grid > button:focus {
-  background-color: rgba(255, 255, 255, .9);
+  background-color: #e2e8f0;
+  transform: scale(1.04);
 }
 
 .span-two {
   grid-column: span 2;
 }
 
+.span-three {
+  grid-column: span 3;
+}
+
+/* Output screen */
 .output {
   grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, .75);
+  background: rgba(6, 15, 36, 0.95); /* dark navy glass */
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-around;
-  padding: .75rem;
+  justify-content: center;
+  padding: 1rem;
   word-wrap: break-word;
   word-break: break-all;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .output .previous-operand {
-  color: rgba(255, 255, 255, .75);
-  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
 }
 
 .output .current-operand {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+/* Binary operations (+, -, *, ÷, ^) */
+.operation-op {
+  background-color: #3b82f6; /* blue accent */
+  color: white;
+}
+
+.operation-op:hover,
+.operation-op:focus {
+  background-color: #2563eb;
+}
+
+/* Unary operations (√, x², 1/x, %) */
+.unary-op {
+  background-color: #8b5cf6; /* purple accent */
+  color: white;
+}
+
+.unary-op:hover,
+.unary-op:focus {
+  background-color: #7c3aed;
+}
+
+/* Equals button */
+.equals-btn {
+  background-color: #0f172a; /* sleek black/blue */
+  color: white;
+  font-weight: bold;
+}
+
+.equals-btn:hover {
+  background-color: #1e293b;
+}
+
+/* AC (reset) button — professional red */
+.ac-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.ac-btn:hover {
+  background-color: #dc2626;
+}
+
+/* DEL button — professional orange */
+.del-btn {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.del-btn:hover {
+  background-color: #d97706;
 }
